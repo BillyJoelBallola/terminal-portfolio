@@ -23,7 +23,7 @@ export default function Home() {
   }, [history]);
 
   return (
-    <main className="h-screen overflow-y-auto text-neutral-50 bg-neutral-950 font-mono p-4">
+    <main className="h-screen overflow-y-auto text-neutral-50 bg-neutral-800 font-mono p-4">
       <TerminalHistory history={history} />
       <TerminalInput
         input={input}

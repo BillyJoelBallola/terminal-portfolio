@@ -55,14 +55,14 @@ Education   │ BS Information Technology
 Cert        │ TESDA Computer Systems Servicing NC II
 
 Summary ───
-IT graduate passionate about building modern web applications 
-with a strong focus on clean UI, scalable architecture, and 
-great user experience.
+  IT graduate passionate about building modern web applications 
+  with a strong focus on clean UI, scalable architecture, and 
+  great user experience.
 
 Background ───
-Previously worked as a Trust & Safety Associate at Accenture, 
-where I developed strong analytical and problem-solving skills 
-before transitioning into full-stack web development.
+  Previously worked as a Trust & Safety Associate at Accenture, 
+  where I developed strong analytical and problem-solving skills 
+  before transitioning into full-stack web development.
 `,
   projects: `
 📂 FEATURED PROJECTS
@@ -92,11 +92,11 @@ before transitioning into full-stack web development.
   skills: `
 🛠️ TECH STACK
 ────────────────────────────────────────────────────────────
-[Languages]       TypeScript, JavaScript, PHP, HTML, CSS
-[Frontend]        Next.js, React.js, TailwindCSS, shadcn/ui
-[Backend]         Node.js, Prisma ORM, REST APIs, JWT, Bcrypt
-[Databases]       PostgreSQL, MySql, Neon (Serverless)
-[Learning]        Docker, AWS Cloud Practitioner
+[Languages]     TypeScript, JavaScript, PHP, HTML, CSS
+[Frontend]      Next.js, React.js, TailwindCSS, shadcn/ui
+[Backend]       Node.js, Prisma ORM, REST APIs, JWT, Bcrypt
+[Databases]     PostgreSQL, MySql, Neon (Serverless)
+[Learning]      Docker, AWS Cloud Practitioner
 `,
   contact: `
 📬 CONTACT & AVAILABILITY
