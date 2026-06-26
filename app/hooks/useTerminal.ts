@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { commands, outputs, WELCOME_MESSAGE } from "../data";
+import { outputs, projects, WELCOME_MESSAGE } from "../data";
 
+type CommandHandler = (args: string[]) => string;
 type HistoryItem = {
   command?: string;
   output: string;
@@ -13,6 +14,45 @@ export function useTerminal() {
   const [input, setInput] = useState("");
   const [historyIndex, setHistoryIndex] = useState(-1);
 
+  const commandHandlers: Record<string, CommandHandler> = {
+    help: () => outputs.help,
+    about: () => outputs.about,
+    skills: () => outputs.skills,
+    contact: () => outputs.contact,
+    neofetch: () => outputs.neofetch,
+    projects: () => outputs.projects,
+    project: ([projectName]) => {
+      if (!projectName) {
+        return "Usage: project <name>";
+      }
+
+      return (
+        projects[projectName as keyof typeof projects] ??
+        `
+Project "${projectName}" not found.
+
+Available projects:
+  • trakr
+  • invio
+  • resumiq
+  • trakbord
+        `
+      );
+    },
+    resume: () => {
+      const link = document.createElement("a");
+
+      link.href = "../../ballola_resume-it.pdf";
+      link.download = "ballola_resume-it.pdf";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      return "Success: Resume downloaded";
+    },
+  };
+
   const commandHistory = history
     .map((item) => item.command)
     .filter((cmd): cmd is string => Boolean(cmd));
@@ -20,7 +60,7 @@ export function useTerminal() {
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const command = input.trim();
+    const command = input.trim().toLowerCase();
 
     if (!command) return;
 
@@ -31,13 +71,17 @@ export function useTerminal() {
       return;
     }
 
+    const [cmd, ...args] = command.split(/\s+/);
+
+    const handler = commandHandlers[cmd];
+
+    const output = handler ? handler(args) : `${cmd}: command not found`;
+
     setHistory((prev) => [
       ...prev,
       {
         command,
-        output: commands.includes(command)
-          ? outputs[command as keyof typeof outputs]
-          : `${command}: command not found`,
+        output,
       },
     ]);
 

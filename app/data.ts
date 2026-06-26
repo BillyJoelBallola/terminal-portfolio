@@ -12,12 +12,12 @@ Type "help" to see available commands.
 `;
 
 export const commands = [
-  "help",
-  "clear",
   "about",
   "projects",
   "skills",
   "contact",
+  "help",
+  "clear",
   "neofetch",
 ];
 
@@ -40,6 +40,8 @@ export const outputs = {
   projects    →  View featured full-stack applications
   skills      →  Check out my technical stack & tools
   contact     →  Find out how to get in touch
+  projects    →  View featured full-stack applications
+  resume      →  Download the resume
   neofetch    →  Display system specs and configuration
   clear       →  Flush the terminal screen buffer
 
@@ -67,25 +69,13 @@ Background ───
   projects: `
 📂 FEATURED PROJECTS
 ────────────────────────────────────────────────────────────
-⚡ 01. TRAKR ───
-  Description │ Expense & Income Tracker
-  Features    │ Wallet management • Analytics dashboard • Live updates
-  Stack       │ Next.js · Prisma · PostgreSQL · TailwindCSS
+01. trakr
+02. invio
+03. resumiq
+04. trakbord
 
-⚡ 02. INVIO ───
-  Description │ Invoice Generator SaaS
-  Features    │ PDF generation • Email delivery • Revenue analytics
-  Stack       │ Next.js · Prisma · Resend · TailwindCSS
-
-⚡ 03. RESUMIQ ───
-  Description │ AI Resume Reviewer
-  Features    │ Resume scoring • ATS keyword analysis • AI insights
-  Stack       │ Next.js · Gemini AI · Prisma
-
-⚡ 04. TRAKBORD ───
-  Description │ Real-time Project Management
-  Features    │ Kanban boards • Team collaboration • Drag & Drop
-  Stack       │ Next.js · Prisma · Pusher · dnd-kit
+Type:             Example:
+project <name>    project trakr
 
 [Link] Explore more projects at: https://github.com/BillyJoelBallola
 `,
@@ -96,7 +86,7 @@ Background ───
 [Frontend]      Next.js, React.js, TailwindCSS, shadcn/ui
 [Backend]       Node.js, Prisma ORM, REST APIs, JWT, Bcrypt
 [Databases]     PostgreSQL, MySql, Neon (Serverless)
-[Learning]      Docker, AWS Cloud Practitioner
+[Learning]      Docker, Laravel
 `,
   contact: `
 📬 CONTACT & AVAILABILITY
@@ -112,5 +102,94 @@ AVAILABILITY STATUS ────────────────────
 [✔] Open-source collaborations welcome
 
 Thanks for stopping by! 
+`,
+};
+
+export const projects = {
+  trakr: `
+⚡ TRAKR ───────────────────────────
+
+Description
+  Trakr is a full-stack Progressive Web Application (PWA) designed 
+  to help users efficiently monitor and manage their daily expenses.
+
+Features
+  ✓ Wallet management
+  ✓ Income & expense tracking
+  ✓ Analytics dashboard
+  ✓ Category management
+  ✓ Responsive UI
+  ✓ Authentication
+
+Tech Stack
+  Frontend   │ Next.js, Tailwind CSS
+  Backend    │ Prisma ORM
+  Database   │ PostgreSQL
+`,
+  invio: `
+⚡ INVIO ───────────────────────────
+
+Description
+  A full-stack invoice management SaaS that lets freelancers create, 
+  manage, and send professional invoices to clients.
+
+Features 
+  ✓ PDF generation
+  ✓ Email delivery
+  ✓ Client management
+  ✓ Status tracking
+  ✓ Revenue dashboard
+  ✓ Public invoice link
+  ✓ Authentication
+
+Tech Stack
+  Frontend   │ Next.js, Tailwind CSS, ShadCN
+  Backend    │ Prisma ORM
+  Database   │ PostgreSQL
+`,
+  resumiq: `
+⚡ RESUMIQ ───────────────────────────
+
+Description
+  An AI-powered resume reviewer that analyzes your resume and provides
+  instant, structured feedback to help you land more interviews.
+
+Features
+  ✓ PDF resume upload
+  ✓ AI-powered analysis (Google Gemini)
+  ✓ Overall score (0-100)
+  ✓ Section-by-section feedback
+  ✓ Job description matcher
+  ✓ Missing keywords detection
+  ✓ Strengths & weaknesses breakdown
+  ✓ Authentication
+
+Tech Stack
+  Frontend   │ Next.js, Tailwind CSS, ShadCN
+  Backend    │ Prisma ORM, Google Gemini AI
+  Database   │ PostgreSQL
+  Security   │ API rate limiting, Zod validation
+`,
+  trakbord: `
+⚡ TRAKBORD ───────────────────────────
+
+Description
+  A real-time project management tool built for teams. Organize work
+  across workspaces, projects, and kanban boards with live updates.
+
+Features
+  ✓ Real-time drag & drop kanban board
+  ✓ List view with accordion layout
+  ✓ Workspace & project management
+  ✓ Role-based access control (Owner, Admin, Member, Viewer)
+  ✓ Task detail modal with comments
+  ✓ Member invitation system
+  ✓ Authentication
+
+Tech Stack
+  Frontend   │ Next.js, Tailwind CSS, ShadCN, dnd-kit
+  Backend    │ Prisma ORM, Pusher WebSockets
+  Database   │ PostgreSQL
+  Security   │ API rate limiting, Zod validation
 `,
 };
