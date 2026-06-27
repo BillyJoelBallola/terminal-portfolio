@@ -53,16 +53,16 @@ Available projects:
     },
   };
 
-  const commandHistory = history
-    .map((item) => item.command)
-    .filter((cmd): cmd is string => Boolean(cmd));
+  const commandHistory = history.reduce<string[]>((acc, item) => {
+    const cmd = item.command?.trim();
+    if (cmd) acc.push(cmd);
+    return acc;
+  }, []);
 
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const command = input.trim().toLowerCase();
-
-    if (!command) return;
 
     if (command === "clear") {
       setHistory([]);
@@ -75,12 +75,16 @@ Available projects:
 
     const handler = commandHandlers[cmd];
 
-    const output = handler ? handler(args) : `${cmd}: command not found`;
+    const output = handler
+      ? handler(args)
+      : !cmd
+        ? ""
+        : `${cmd}: command not found`;
 
     setHistory((prev) => [
       ...prev,
       {
-        command,
+        command: !cmd ? " " : cmd,
         output,
       },
     ]);
@@ -90,35 +94,26 @@ Available projects:
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+    e.preventDefault();
+
+    const len = commandHistory.length;
+    if (!len) return;
+
     if (e.key === "ArrowUp") {
-      e.preventDefault();
-
-      if (!commandHistory.length) return;
-
       const nextIndex =
-        historyIndex === -1
-          ? commandHistory.length - 1
-          : Math.max(0, historyIndex - 1);
-
+        historyIndex === -1 ? len - 1 : Math.max(0, historyIndex - 1);
       setHistoryIndex(nextIndex);
       setInput(commandHistory[nextIndex]);
-    }
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-
-      if (historyIndex === -1) return;
-
-      if (historyIndex === commandHistory.length - 1) {
+    } else {
+      if (historyIndex === -1 || historyIndex === len - 1) {
         setHistoryIndex(-1);
         setInput("");
-        return;
+      } else {
+        const nextIndex = historyIndex + 1;
+        setHistoryIndex(nextIndex);
+        setInput(commandHistory[nextIndex]);
       }
-
-      const nextIndex = historyIndex + 1;
-
-      setHistoryIndex(nextIndex);
-      setInput(commandHistory[nextIndex]);
     }
   }
 

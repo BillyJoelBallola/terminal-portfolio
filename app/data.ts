@@ -1,5 +1,4 @@
-export const WELCOME_MESSAGE = `
-██████╗ ██╗██╗     ██╗  ██╗   ██╗
+export const WELCOME_MESSAGE = `██████╗ ██╗██╗     ██╗  ██╗   ██╗
 ██╔══██╗██║██║     ██║  ╚██╗ ██╔╝
 ██████╔╝██║██║     ██║   ╚████╔╝
 ██╔══██╗██║██║     ██║    ╚██╔╝
@@ -22,8 +21,7 @@ export const commands = [
 ];
 
 export const outputs = {
-  neofetch: `
-   /|_/|        billyjoel@portfolio-cli
+  neofetch: `   /|_/|        billyjoel@portfolio-cli
   ( o.o )       ───────────────────────
    > ^ <        OS: PortfolioOS v1.0.0
   /     |       Kernel: x86_64 Next.js
@@ -33,22 +31,19 @@ export const outputs = {
                 Location: Laguna, Philippines
                 Stack: Next.js · TypeScript · Prisma
 `,
-  help: `
-🤖 Supported Commands:
+  help: ` 🤖 Supported Commands:
 ────────────────────────────────────────────────────────────
   about       →  Get to know who Billy is
-  projects    →  View featured full-stack applications
-  skills      →  Check out my technical stack & tools
+  projects    →  View featured projects
+  skills      →  Check out his technical stack & tools
   contact     →  Find out how to get in touch
-  projects    →  View featured full-stack applications
-  resume      →  Download the resume
+  resume      →  Download his resume
   neofetch    →  Display system specs and configuration
   clear       →  Flush the terminal screen buffer
 
 [Tip] Use ↑ / ↓ keys for history. Tab completion coming soon.
 `,
-  about: `
-👤 ABOUT ME
+  about: ` 👤 ABOUT ME
 ────────────────────────────────────────────────────────────
 Name        │ Billy Joel P. Ballola
 Location    │ Magdalena, Laguna, Philippines
@@ -66,8 +61,7 @@ Background ───
   where I developed strong analytical and problem-solving skills 
   before transitioning into full-stack web development.
 `,
-  projects: `
-📂 FEATURED PROJECTS
+  projects: ` 📂 FEATURED PROJECTS
 ────────────────────────────────────────────────────────────
 01. trakr
 02. invio
@@ -79,8 +73,7 @@ project <name>    project trakr
 
 [Link] Explore more projects at: https://github.com/BillyJoelBallola
 `,
-  skills: `
-🛠️ TECH STACK
+  skills: ` 🛠️ TECH STACK
 ────────────────────────────────────────────────────────────
 [Languages]     TypeScript, JavaScript, PHP, HTML, CSS
 [Frontend]      Next.js, React.js, TailwindCSS, shadcn/ui
@@ -88,8 +81,7 @@ project <name>    project trakr
 [Databases]     PostgreSQL, MySql, Neon (Serverless)
 [Learning]      Docker, Laravel
 `,
-  contact: `
-📬 CONTACT & AVAILABILITY
+  contact: ` 📬 CONTACT & AVAILABILITY
 ────────────────────────────────────────────────────────────
 📧 Email          │ billyjoelballola27@gmail.com
 🐙 GitHub         | github.com/BillyJoelBallola
@@ -106,8 +98,7 @@ Thanks for stopping by!
 };
 
 export const projects = {
-  trakr: `
-⚡ TRAKR ───────────────────────────
+  trakr: `⚡ TRAKR ───────────────────────────
 
 Description
   Trakr is a full-stack Progressive Web Application (PWA) designed 
@@ -126,8 +117,7 @@ Tech Stack
   Backend    │ Prisma ORM
   Database   │ PostgreSQL
 `,
-  invio: `
-⚡ INVIO ───────────────────────────
+  invio: `⚡ INVIO ───────────────────────────
 
 Description
   A full-stack invoice management SaaS that lets freelancers create, 
@@ -147,8 +137,7 @@ Tech Stack
   Backend    │ Prisma ORM
   Database   │ PostgreSQL
 `,
-  resumiq: `
-⚡ RESUMIQ ───────────────────────────
+  resumiq: `⚡ RESUMIQ ───────────────────────────
 
 Description
   An AI-powered resume reviewer that analyzes your resume and provides
@@ -170,8 +159,7 @@ Tech Stack
   Database   │ PostgreSQL
   Security   │ API rate limiting, Zod validation
 `,
-  trakbord: `
-⚡ TRAKBORD ───────────────────────────
+  trakbord: `⚡ TRAKBORD ───────────────────────────
 
 Description
   A real-time project management tool built for teams. Organize work

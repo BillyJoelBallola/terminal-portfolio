@@ -13,7 +13,7 @@ export function TerminalHistory({ history }: Props) {
   return (
     <>
       {history.map((item, index) => (
-        <div key={index} className="mb-4">
+        <div key={index}>
           {item.command && (
             <div className="flex gap-2">
               <TerminalPrompt />
